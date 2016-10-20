@@ -13,6 +13,10 @@ int main() {
 	//initialize the library to NULL values, for ease of use
 	init_lib(table);
 
+	printf("\nMusic Library by Winston Venderbush\n");
+
+	printf("\n\nAdding to library...\n");
+
 	//adding some songs to the library
 	char title[30] = "Closer";
 	char artist[30] = "The Chainsmokers";
@@ -34,10 +38,6 @@ int main() {
 	strcpy(artist, "major lazer");
 	add_song(table, title, artist);
 
-	strcpy(title, "treat you better");
-	strcpy(artist, "sean mendez");
-	add_song(table, title, artist);
-
 	strcpy(title, "cheap thrills");
 	strcpy(artist, "sia");
 	add_song(table, title, artist);
@@ -50,29 +50,6 @@ int main() {
 	strcpy(artist, "the chainsmokers");
 	add_song(table, title, artist);
 
-	strcpy(title, "ride");
-	strcpy(artist, "twenty one pilots");
-	add_song(table, title, artist);
-
-	strcpy(title, "one dance");
-	strcpy(artist, "drake");
-	add_song(table, title, artist);
-
-	strcpy(title, "Sucker for Pain");
-	strcpy(artist, "Lil Wayne");
-	add_song(table, title, artist);
-
-	strcpy(title, "we don't talk anymore");
-	strcpy(artist, "charlie puth");
-	add_song(table, title, artist);
-
-	strcpy(title, "hymn for the weekend");
-	strcpy(artist, "coldplay");
-	add_song(table, title, artist);
-
-	strcpy(title, "panda");
-	strcpy(artist, "desiigner");
-	add_song(table, title, artist);
 
 	//printing the whole library, to show it off
 	printf("\n\nMy Library:\n");
@@ -87,9 +64,39 @@ int main() {
 
 	printf("\n");
 
+	printf("Searching for 'don't let me down' by the chainsmokers:\n");
+	strcpy(title, "don't let me down");
+	search_song(table, title);
+
+	printf("\n");
+
+	printf("Searching for 'closer' by the chainsmokers:\n");
+	strcpy(title, "closer");
+	search_song(table, title);
+
+	printf("\n");
+
+	printf("Searching for 'roses' by the chainsmokers:\n");
+	strcpy(title, "roses");
+	search_song(table, title);
+
+	printf("\n");
+
 	//Searching by artist:
 	printf("Searching for a song by D.R.A.M. :\n");
 	strcpy(artist, "D.R.A.M.");
+	search_artist(table, artist);
+
+	printf("\n");
+
+	printf("Searching for a song by Sia :\n");
+	strcpy(artist, "sia");
+	search_artist(table, artist);
+
+	printf("\n");
+
+	printf("Searching for a song by Lil Wayne :\n");
+	strcpy(artist, "Lil Wayne");
 	search_artist(table, artist);
 
 	printf("\n");
@@ -101,6 +108,18 @@ int main() {
 
 	printf("\n");
 
+	printf("Printing all songs that begin with the letter 'd' :\n");
+	char letter2 = 'd';
+	print_letter(table, letter2);
+
+	printf("\n");
+
+	printf("Printing all songs that begin with the letter 'j' :\n");
+	char letter3 = 'j';
+	print_letter(table, letter3);
+
+	printf("\n");
+
 	//Printing by artist:
 	printf("Printing all songs by The Chainsmokers :\n");
 	strcpy(artist, "The Chainsmokers");
@@ -108,9 +127,26 @@ int main() {
 
 	printf("\n");
 
+	printf("Printing all songs by Sia :\n");
+	strcpy(artist, "Sia");
+	print_artist(table, artist);
+
+	printf("\n");
+
+	printf("Printing all songs by Lil Wayne :\n");
+	strcpy(artist, "Lil Wayne");
+	print_artist(table, artist);
+
+	printf("\n");
+
 	//Shuffling playlist (creating shuffle playlist of 5 random songs):
-	printf("Shuffled playlist of 5 random songs :\n");
-	shuffle(table, 5);
+	printf("Shuffled playlist of 3 random songs :\n");
+	shuffle(table, 3);
+
+	printf("\n");
+
+	printf("Shuffled playlist of 3 new random songs :\n");
+	shuffle(table, 3);
 
 	printf("\n");
 
@@ -146,23 +182,19 @@ int main() {
 	printf("### Deleting/Free Entire Library ### :\n");
 	printf("--------------------------------------\n");
 
-	printf("Original Full Library:\n");
+	printf("Current Library:\n");
 	print_library(table);
 
 	printf("\n");
 
-	printf("Cleared Library\n");
+	printf("Deleting and Freeing Library...\n");
 	delete_all(table);
 	print_library(table); //nothing left to print, prints nothing!
 
 	printf("\n");
 
-	printf("Attempting print...\n");
-	print_library(table); //nothing left to print, prints nothing!
-
-	printf("\n");
-
-	printf("Library clear, nothing left to print!\n");
+	printf("Attempting to print empty library:\n");
+	print_library(table);
 
 
 

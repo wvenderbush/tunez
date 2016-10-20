@@ -34,7 +34,12 @@ struct song_node * search_song(song_node ** lib, char * name){
   char first = *(strlwr(&(name[0])));
   int index = (first - 'a');
   song_node * song = find_song(lib[index], name);
-  printf("%s - %s\n", song->name, song->artist );
+  if (song != NULL){
+    printf("%s - %s\n", song->name, song->artist );
+  }
+  else{
+    printf("Song not found!\n");
+  }
   return song;
 }
 
@@ -46,6 +51,7 @@ struct song_node * search_artist(song_node ** lib, char * artist){
       return song;
     }
   }
+  printf("Artist not found!\n");
   return NULL;
 }
 
@@ -83,13 +89,18 @@ void print_artist(song_node ** lib, char * artist){
 }
 
 void print_library(song_node ** lib){
+  int flag = 0;
   int i;
   for (int i = 0; i < 25; i++){
     if (lib[i] != NULL){
+      flag = 1;
       int z = i + 97;
       printf("%c: ", z);
       print_list(lib[i]);
     }
+  }
+  if (flag == 0){
+    printf("Library Empty!\n");
   }
 }
 
