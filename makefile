@@ -1,9 +1,11 @@
+#Winston Venderbush
+
 GCC = gcc -g
 
-all: music_lib.o list.o main.o
-	$(GCC) music_lib.o list.o main.o -o prog
+all: list.o music_lib.o main.o
+	$(GCC) list.o music_lib.o main.o -o prog
 
-music_lib.o: music_lib.c music_lib.h
+music_lib.o: music_lib.c music_lib.h list.h
 	$(GCC) -c music_lib.c
 
 list.o: list.c list.h

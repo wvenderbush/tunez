@@ -1,10 +1,10 @@
 #include "list.h"
 
-#ifndef DEFINED
-#define DEFINED
+#ifndef DEFINED2
+#define DEFINED2
+
 
 //Winston Venderbush
-
 
 //functions
 void init_lib(song_node ** table);

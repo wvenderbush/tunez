@@ -1,5 +1,7 @@
-#ifndef DEFINED
-#define DEFINED
+#ifndef DEFINED1
+#define DEFINED1
+
+//Winston Venderbush
 
 typedef struct song_node{ 
   char name[256];

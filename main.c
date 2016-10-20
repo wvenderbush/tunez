@@ -4,6 +4,8 @@
 #include "music_lib.h"
 #include "list.h"
 
+//Winston Venderbush
+
 song_node * table[26];
 
 int main() {
@@ -93,8 +95,8 @@ int main() {
 	printf("\n");
 
 	//Printing by letter:
-	printf("Printing all songs that begin with the letter 'c' :\n");
-	char letter = 'c';
+	printf("Printing all songs that begin with the letter 'h' :\n");
+	char letter = 'h';
 	print_letter(table, letter);
 
 	printf("\n");
@@ -134,8 +136,8 @@ int main() {
 
 	printf("\n");
 
-	printf("'Cheap Thrills' removed from Library\n");
-	strcpy(title, "cheap thrills");
+	printf("'Cold Water' removed from Library\n");
+	strcpy(title, "cold water");
 	delete_song(table, title);
 	print_library(table);
 

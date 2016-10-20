@@ -161,33 +161,6 @@ struct song_node * remove_node( struct song_node * list, char * findname ){
   return start;
 }
 
-//   song_node *prev = NULL;
-//   song_node *start = list;
-
-//   while ( list ) {
-    
-//     if (strcmp(strlwr(findname), list->name) == 0){ 
-//       if (prev == NULL){
-//         struct song_node *f = list->next;
-//         //free(list);
-//         list = NULL;
-//         return f;
-//       }
-//       song_node *temp = list->next;
-//       prev->next = temp;
-//       free(list);
-//       list = NULL;
-//       return start;
-
-//     }
-//     else {
-//       prev = list;
-//       list = list->next;
-//     }
-//   }
-//   return list;
-// }
-
 struct song_node * free_all( struct song_node *n ) {
 
   struct song_node *f = n;
